@@ -19,4 +19,16 @@ while i < len(a):
         j += 1
     i += 1
 
+<<<<<<< HEAD
+=======
+"""
+if len(a) % 2 == 1:
+    print a[(len(a) - 1) / 2]
+elif len(a) % 2 == 0:
+    if a[(len(a) - 1) / 2] < a[((len(a) - 1) / 2) + 1]:
+        print a[((len(a) - 1) / 2) + 1]
+    else:
+        print a[(len(a) - 1) / 2]
+"""
+>>>>>>> master
 print a[len(a) / 2]

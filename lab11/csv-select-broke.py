@@ -29,33 +29,13 @@ while index < 10:
 
     if s[k:j - 1] == arg[:i]:
         pos = index
-<<<<<<< HEAD
     else:    
         index += 1
-=======
-
-    index += 1
->>>>>>> master
 
 # function to check if any element of s is the target
 
 s = raw_input()
 while s != "end":
-<<<<<<< HEAD
     if target in s:
         print s
-=======
-    l = 0
-    m = 0
-    place = 0
-    while place < 10:
-        l = m
-        while m < len(s) and s[m] != ",":
-            m += 1
-
-        m += 1
-        if s[l:m - 1] == target and place == pos:
-            print s
-        place += 1
->>>>>>> master
     s = raw_input()

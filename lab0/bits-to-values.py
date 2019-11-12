@@ -1,3 +1,3 @@
 #!/usr/bin/env python
 
-values = 2 **bits
+values = 2 ** bits
