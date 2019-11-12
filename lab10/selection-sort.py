@@ -14,12 +14,12 @@ while i < len(a):
     j = i + 1
     while j < len(a):
         if a[j] < a[p]:
-            a[j], a[p] = a[p], a[j]
+            p = j
 
         j += 1
+
+    a[i], a[p] = a[p], a[i]
+
     i += 1
 
-j = 0
-while j < len(a):
-    print a[j]
-    j += 1
+print a
