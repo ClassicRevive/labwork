@@ -14,17 +14,6 @@ while i < len(a):
     j = i + 1
     while j < len(a):
         if a[j] < a[p]:
-<<<<<<< HEAD
-            a[j], a[p] = a[p], a[j]
-
-        j += 1
-    i += 1
-
-j = 0
-while j < len(a):
-    print a[j]
-    j += 1
-=======
             p = j
 
         j += 1
@@ -34,4 +23,3 @@ while j < len(a):
     i += 1
 
 print a
->>>>>>> master

@@ -4,4 +4,8 @@
 n = input()
 p = input()
 
-print n % 10 ** p 
+# trim number down so last digit is the target
+num = n / 10 ** p
+
+# print the last digit of th number
+print num % 10
