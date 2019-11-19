@@ -2,17 +2,15 @@
 
 
 s = raw_input()
+
 j = 0
 i = 0
-headers = 0
 
-while headers < 10:
-    while j < len(s) and s[j] != ",":  # find first comma
+while i < len(s):
+    while j < len(s) and s[j] != ",":  # find comma
         j += 1
 
     print s[i:j]
 
-    i = j + 1
+    i = j + 1  # assign new index for linear search
     j += 1
-
-    headers += 1

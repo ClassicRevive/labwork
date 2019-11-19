@@ -8,17 +8,18 @@ while s != "end":
     a.append(int(s))
     s = raw_input()
 
-i = 0
+number = input()
+a.append(number)
+
+i = 1
 while i < len(a):
     p = i
-    j = i + 1
-    while j < len(a):
-        if a[j] < a[p]:
-            p = j
+    v = a[i]
+    while p > 0 and v < a[p - 1]:
+        a[p] = a[p - 1]
+        p -= 1
 
-        j += 1
-
-    a[i], a[p] = a[p], a[i]
+    a[p] = v
 
     i += 1
 

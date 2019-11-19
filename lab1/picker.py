@@ -4,9 +4,6 @@
 a = input()
 b = input()
 c = input()
- 
-if (c / 2) * 2 == c:
-	print b
-elif (c % 2) * a:
-	print a
-	
+
+# print "a amounts to", (((c - 1) % 2) * a), "b amounts to", ((c % 2) * b)
+print (((c - 1) % 2) * a) + ((c % 2) * b)

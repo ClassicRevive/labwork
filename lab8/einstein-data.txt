@@ -1,0 +1,15 @@
+2018-10-24/ca116/reynaj25/first-pair.py
+2018-10-24/ca116/reynaj25/first-pair.py.correct
+2018-10-24/ca116/reynaj25/second-number.py
+2018-10-24/ca116/reynaj25/second-number.py.incorrect
+2018-10-25/ca116/sblott/additions-1.py
+2018-10-25/ca116/sblott/additions-1.py.correct
+2018-10-25/ca116/sblott/additions-2.py
+2018-10-25/ca116/sblott/additions-2.py.incorrect
+2018-10-25/ca116/sblott/additions-3.py
+2018-10-25/ca116/sblott/additions-3.py.correct
+2018-10-25/ca116/sblott/city-cities.py
+2018-10-25/ca116/sblott/city-cities.py.incorrect
+2018-10-25/ca116/sblott/city-fields.py
+2018-10-25/ca116/sblott/city-fields.py.correct
+end
