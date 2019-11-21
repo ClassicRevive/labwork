@@ -3,7 +3,7 @@
 
 import sys
 # this program changes the order of date
-# it then outputs this along with the name
+# in iris-dobs.txt and writes to american-dobs.txt
 
 
 with open("irish-dobs.txt") as irish:
