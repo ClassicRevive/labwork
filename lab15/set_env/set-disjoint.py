@@ -19,16 +19,20 @@ with open("a.txt") as a:
 
         i += 1
 
+# print "a_list", a_list
+# print "a_dict", a_dict
+
 intersection = False
 
-with open("b.txt") as b:
-    b = sys.stdin.readlines()
+with open("b.txt") as b1:
+    b = b1.readlines()
     i = 0
     while i < len(b) and not(intersection):
-        word = b[i].rstrip()
+        word1 = b[i].rstrip()
 
-        if word in a_dict:
+        if word1 in a_dict:
             intersection = True
+
         i += 1
 
 

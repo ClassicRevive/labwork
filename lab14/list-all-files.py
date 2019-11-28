@@ -27,6 +27,7 @@ while i < len(files):
 while len(directories) != 0:
     i = 0
     while i < len(directories):
+        # print "being parsed", directories[i], directories
         dir_files = os.listdir(directories[i])
 
         j = 0
