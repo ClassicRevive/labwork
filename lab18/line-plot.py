@@ -3,19 +3,52 @@
 
 import sys
 
-point_1 = sys.argv[0] + "-" + sys.argv[2]
-point_2 = sys.argv[1] + "-" + sys.argv[3]
+# take points as list tuples from argv
+point_1 = sys.argv[1:3]
+point_2 = sys.argv[3:]
 
+# convert to integers for calculation
+i = 0
+while i < len(point_1):
+    point_1[i] = float(point_1[i])
+    i += 1
 
+i = 0
+while i < len(point_2):
+    point_2[i] = float(point_2[i])
+    i += 1
+
+# insert plotting code
 
 first_line = " " + ("-" * 20) + " "
 
-# insert plotting code
-bot_left = x_y_length[0] + " " + x_y_length[1]
+# my should_plot does not work when the slope is negative
+def should_plot(point1, point2, grid_point):
+    slope = (point2[1] - point1[1]) / (point2[0] - point1[0])
+    constant = point1[1] - (slope * point1[0])
+    y = (slope * grid_point[0]) + constant + 0.5
+    x = (grid_point[1] - constant) / slope + 0.5
+    x = int(x)
+    y = int(y)
 
-def should_plot():
+    # if grid_point == point1 or grid_point == point2:
+    #     return "plot"
 
-    
+    # print "x", x
+    # print "y", y
+    if grid_point[0] < point1[0] and grid_point[0] < point2[0]:  # too left
+        return False
+    elif grid_point[0] > point1[0] and grid_point[0] > point2[0]:  # too right
+        return False
+    elif grid_point[1] > point1[1] and grid_point[1] > point2[1]:  # too up
+        return False
+    elif grid_point[1] < point1[1] and grid_point[1] < point2[1]:  # too down
+        return False
+    else:
+        if grid_point[0] == x or grid_point[1] == y:
+            return "plot"
+
+
 def generate_grid():
     y = 19
     x = 0
@@ -26,9 +59,9 @@ def generate_grid():
         x = 0
         while x < 20:
 
-            coord = str(x) + " " + str(y)
+            coord = [x, y]
 
-            if should_plot():
+            if should_plot(point_1, point_2, coord) == "plot":
                 grid.append("*")
             else:
                 grid.append(" ")
