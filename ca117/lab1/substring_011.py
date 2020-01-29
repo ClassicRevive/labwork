@@ -4,7 +4,6 @@
 import sys
 
 for line in sys.stdin:
-    line = line.rstrip()
-    words = line.split()
+    [left, right] = [line.rstrip().split()]
 
-    print(words[0].lower() in words[1].lower())
+    print(left.lower() in right.lower())

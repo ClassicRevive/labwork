@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+'''isolate full name from DCU email'''
 
 import sys
 
