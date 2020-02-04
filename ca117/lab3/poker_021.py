@@ -7,16 +7,15 @@ import sys
 # define dictionaries of rank names and rank counters
 
 ranknames = {"rank0": "nothing",
-            "rank1": "one pair",
-            "rank2": "two pairs",
-            "rank3": "three of a kind",
-            "rank4": "straight",
-            "rank5": "flush",
-            "rank6": "full house",
-            "rank7": "four of a kind",
-            "rank8": "straight flush",
-            "rank9": "royal flush",
-            }
+             "rank1": "one pair",
+             "rank2": "two pairs",
+             "rank3": "three of a kind",
+             "rank4": "a straight",
+             "rank5": "a flush",
+             "rank6": "a full house",
+             "rank7": "four of a kind",
+             "rank8": "a straight flush",
+             "rank9": "a royal flush"}
 ranks = {}
 
 def probability(s):
