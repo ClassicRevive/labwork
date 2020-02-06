@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+Extracting 
 ''' center the text from stdin and print '''
 
 import sys
