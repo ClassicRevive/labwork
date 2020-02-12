@@ -7,7 +7,7 @@ import sys
 def reverse(s):
     reverse = ""
     for i in range(len(s)):
-        reverse += s[-1 -i]
+        reverse += s[- 1 - i]
 
     return reverse
 
@@ -28,13 +28,15 @@ def bsearch(a, q):
 
 def main():
     a = []
-    a_lower = []
+    al = []
     for i in sys.stdin:
         a.append(i.rstrip())
-        a_lower.append(i.rstrip().lower())
-       
+        al.append(i.rstrip().lower())
+    # al.append("zyzy")
+    # a.append("zyzy")
 
-    print([x for x in a if 5 < len(x) and XXXXX])
+    print([x for x in a if 4 < len(x) and reverse(x).lower() == al[bsearch(al, reverse(x).lower())]])
+
 
 if __name__ == '__main__':
     main()
