@@ -16,13 +16,17 @@ def main():
     sides = []
 
     for line in sys.stdin:
-        side = line.strip().split()
+        sides.append(line.strip())
+    side1 = sides[0].split()
+    side2 = sides[1].split()
+    side3 = sides[2].split()
 
-        for i in range(len(side)):
-            side[i] = int(side[i])
-        sides.append(side)
+    for i in range(2):
+        side1[i] = int(side1[i])
+        side2[i] = int(side2[i])
+        side3[i] = int(side3[i])
 
-    [side1, side2, side3] = sides
+    # [side1, side2, side3] = sides
 
     d_12 = distance(side1, side2)
     d_13 = distance(side1, side3)
@@ -37,14 +41,14 @@ def main():
         mid = side1
         other_1 = side2
         other_2 = side3
-    elif d_13 > d_12 and d_13 > d_23:
+    else:
         mid = side2
         other_1 = side1
         other_2 = side3
 
     move1 = other_2[0] + (other_1[0] - mid[0])
     move2 = other_2[1] + (other_1[1] - mid[1])
-    print("{} {}".format(move1, move2))
+    print("{:d} {:d}".format(move1, move2))
     # want transformation to get from middle corner to unfound opposite
     # corner, want transformation based on other two sides.
 
