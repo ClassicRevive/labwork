@@ -9,6 +9,8 @@ import sys
 cmd_draw = set(sys.argv[1:])
 # print(cmd_draw)
 
+def sort_on(t):
+    return len(str(t[1]))
 def main():
     matches = {"Match3": 0,
                "Match4": 0,
@@ -36,10 +38,10 @@ def main():
             matches["Match" + matchno] += 1
 
     # get longest number for right justification format
-    longest = 0
-    for match in matches:
-        if longest < len(str(matches[match])):
-            longest = len(str(matches[match]))
+    longest = len(max(matches.items()[1], key=sort_on))
+    # for match in matches:
+    #     if longest < len(str(matches[match])):
+    #         longest = len(str(matches[match]))
 
     for match in sorted(matches):
         matchcount = matches[match]
