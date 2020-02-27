@@ -11,6 +11,7 @@ cmd_draw = set(sys.argv[1:])
 
 def sort_on(t):
     return len(str(t[1]))
+
 def main():
     matches = {"Match3": 0,
                "Match4": 0,
@@ -37,12 +38,9 @@ def main():
             matchno = str(len(cmd_draw.intersection(rand_draw)))
             matches["Match" + matchno] += 1
 
-    # get longest number for right justification format
-    longest = len(max(matches.items()[1], key=sort_on))
-    # for match in matches:
-    #     if longest < len(str(matches[match])):
-    #         longest = len(str(matches[match]))
-
+    longest = len(str(max(matches.items(), key=sort_on)[1]))
+    # print(longest)
+    
     for match in sorted(matches):
         matchcount = matches[match]
         
@@ -55,15 +53,5 @@ def main():
         print("Match {:s}'s: {:>{:d}d} ({} to 1)".format(mn, matchcount, longest, odds))
 
 
-
-
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
