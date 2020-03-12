@@ -6,12 +6,10 @@ import sys
 
 # read map into a matrix using nested list data type
 
-def gen_map(rows, columns):
+def gen_map(rows):
     starmap = []
     for i in range(rows):
-        row = sys.stdin.readline()
-        row = list(row.rstrip())
-        # print(row)
+        row = sys.stdin.readline().rstrip()
         starmap.append(row)
 
     return starmap
@@ -20,44 +18,47 @@ def gen_map(rows, columns):
 def main():
     mxn = sys.stdin.readline().split()
     r, c = int(mxn[0]), int(mxn[1])
-    starm = gen_map(r, c)
+    starm = gen_map(r)
 
     # find every single "-" first
-    seen_chords = []
+    star_coords = []
     for row in range(len(starm)):
         col = 0
         while col < c:
             if starm[row][col] == "-":
-                seen_chords.append((row, col))
+                star_coords.append((row, col))
 
             col += 1
 
-
-    while 0 < len(seen_chords):
-        curr_star = [p]
-        
+    starcount = 0
+    while 0 < len(star_coords):
         # eliminate star points out of seen chords in clusters
-        # using <v> directional search
+        # using < v > directional search
 
+        # print(star_coords)
         i = 0
+        curr_star = [star_coords[i]]
         while i < len(curr_star):
-            lstar = (curr_star[i][0] - 1, curr_star[i][1])
-            rstar = (curr_star[i][0] + 1, curr_star[i][1])
-            dstar = (curr_star[i][0], curr_star[i][1] - 1)
+            lstar = (curr_star[i][0], curr_star[i][1] - 1)
+            rstar = (curr_star[i][0], curr_star[i][1] + 1)
+            dstar = (curr_star[i][0] + 1, curr_star[i][1])
 
-            if lstar in seen_chords:
+            if lstar not in curr_star and lstar in star_coords:
                 curr_star.append(lstar)
-            elif rstar in seen_chords:
+            if rstar not in curr_star and rstar in star_coords:
                 curr_star.append(rstar)
-            elif dstar in seen_chords:
-                curr_star.append(rstar)
-            
+            if dstar not in curr_star and dstar in star_coords:
+                curr_star.append(dstar)
+
+            # print(curr_star)
+
             i += 1
 
-        for coord in curr_star:
-            seen_chords.remove(coord)
+        star_coords = [s for s in star_coords if s not in curr_star]
 
-    print(seen_chords)
+        starcount += 1
+
+    print(starcount)
 
 if __name__ == '__main__':
         main()
