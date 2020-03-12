@@ -8,16 +8,19 @@ class Score():
     def __init__(self, goals=0, points=0):
         self.goals = goals
         self.points = points
-        self.total = 3 * goals + points
+
+    # score1.score2points()
+    def score2points(self):
+        return self.goals * 3 + self.points
 
     def less_than(self, other):
-        return self.total < other.total
+        return self.score2points() < other.score2points()
 
     def greater_than(self, other):
-        return other.total < self.total
+        return other.score2points() < self.score2points()
 
     def equal_to(self, other):
-        return self.total == other.total
+        return self.score2points() == other.score2points()
 
 def main():
 
