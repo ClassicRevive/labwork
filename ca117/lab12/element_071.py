@@ -1,5 +1,4 @@
 class Element():
-
     def __init__(self, number, name, symbol, boiling_point):
         self.number = number
         self.name = name

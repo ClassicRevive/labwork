@@ -8,6 +8,7 @@ def main():
         c = Contact(name, phone, email)
         cl.add_contact(c)
 
+    # print(cl)
     c = cl.get_contact('Jimmy')
     print(c)
     c = cl.get_contact('Mary')

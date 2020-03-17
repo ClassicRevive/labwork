@@ -9,7 +9,6 @@ class Contact():
         self.phone = phone
         self.email = email
 
-
     def __str__(self):
         return "{} {} {}".format(self.name, self.phone, self.email)
 
@@ -23,7 +22,7 @@ class ContactList():
     # add contact to list
     def add_contact(self, contact):
         self.d[contact.name] = contact.phone, contact.email
-        # print(self.d)
+
     def del_contact(self, name):
         if name in self.d:
             del self.d[name]
@@ -31,13 +30,17 @@ class ContactList():
     # make a contact object from the name input
     def get_contact(self, name):
         if name in self.d:
-            print(self.d[name][0])
-            c = Contact(name, self.d[name][0], self.d[name[1]])  # name, phone, email
-            return c
+            contact = Contact(name, self.d[name][0], self.d[name][1])  # name, phone, email
+            return contact
 
     def __str__(self):
-        pass
+        person = []
+        for k, v in self.d.items():
+            contact = k + " " + v[0] + " " + v[1]
+            person.append(contact)
 
-import sys
-def main():
-    pass
+        person.sort()
+        string = "Contact list\n------------\n{}"\
+                 .format("\n".join(person))
+
+        return string

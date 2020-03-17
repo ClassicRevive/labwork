@@ -1,0 +1,71 @@
+ORIGINAL VERSION
+
+    starcount = 0
+    while 0 < len(star_coords):
+        # eliminate star points out of seen chords in clusters
+        # using < v > directional search
+
+        # print(star_coords)
+        i = 0
+        curr_star = [star_coords[i]]
+        while i < len(curr_star):
+            lstar = (curr_star[i][0], curr_star[i][1] - 1)
+            rstar = (curr_star[i][0], curr_star[i][1] + 1)
+            dstar = (curr_star[i][0] + 1, curr_star[i][1])
+
+            if lstar not in curr_star and lstar in star_coords:
+                curr_star.append(lstar)
+            if rstar not in curr_star and rstar in star_coords:
+                curr_star.append(rstar)
+            if dstar not in curr_star and dstar in star_coords:
+                curr_star.append(dstar)
+
+            print(curr_star)
+
+            i += 1
+
+        star_coords = [s for s in star_coords if s not in curr_star]
+
+        starcount += 1
+
+    print(starcount)
+
+
+
+TESTING VERSION
+  
+starcount = 0
+    j = 0
+    curr_star = [star_coords[j]]
+    while len(curr_star) < len(star_coords):
+        
+        # need to add the next first element of star coords that
+        # isnt in the current star for the search to take place
+        i = 0
+        while i < len(star_coords) and star_coords[i] in curr_star:
+            i += 1
+
+        if i < len(star_coords) and j != 0:
+            curr_star.append(star_coords[i])
+        
+        # eliminate star points out of seen chords in clusters
+        # using < v > directional search
+        while j < len(curr_star):
+            lstar = (curr_star[j][0], curr_star[j][1] - 1)
+            rstar = (curr_star[j][0], curr_star[j][1] + 1)
+            dstar = (curr_star[j][0] + 1, curr_star[j][1])
+
+            if lstar not in curr_star and lstar in star_coords:
+                curr_star.append(lstar)
+            if rstar not in curr_star and rstar in star_coords:
+                curr_star.append(rstar)
+            if dstar not in curr_star and dstar in star_coords:
+                curr_star.append(dstar)
+            j += 1
+
+        
+
+        
+        starcount += 1
+
+    print(starcount)
