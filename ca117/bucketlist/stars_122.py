@@ -15,48 +15,57 @@ def gen_map(rows):
     return starmap
 
 
+def find_star(i, j, plane):
+    point = (i, j)
+    to_search = []
+    to_search.append(point)
+
+    while to_search != []:  # while there are points to search, continue
+        p = to_search.pop()
+        i = p[0]
+        j = p[1]
+
+        lstar = (p[0], p[1] - 1)
+        rstar = (p[0], p[1] + 1)
+        dstar = (p[0] + 1, p[1])
+        ustar = (p[0] - 1, p[1])
+        # look all around each point for another "-"
+        if p[0] - 1 >= 0 and plane[ustar[0]][ustar[1]] == "-":
+            to_search.append(ustar)
+
+        if p[1] - 1 >= 0 and plane[lstar[0]][lstar[1]] == "-":
+            to_search.append(lstar)
+
+        if p[0] + 1 < len(plane) and plane[dstar[0]][dstar[1]] == "-":
+            to_search.append(dstar)
+
+        if p[1] + 1 < len(plane[i]) and plane[rstar[0]][rstar[1]] == "-":
+            to_search.append(rstar)
+
+        # UPDATE THE STAR PLANE ITSELF INSTEAD OF A LIST
+        line = plane[i]
+        new = line[:j] + "*" + line[j + 1:]
+        plane[i] = new
+
+    return plane
+
+
 def main():
     mxn = sys.stdin.readline().split()
     r, c = int(mxn[0]), int(mxn[1])
     starm = gen_map(r)
 
-    # find every single "-" first
-    star_coords = []
+    starcount = 0
+
     for row in range(len(starm)):
         col = 0
         while col < c:
+            # when "-" is found, find the whole star and update the map
             if starm[row][col] == "-":
-                star_coords.append((row, col))
+                starm = find_star(row, col, starm)
+                starcount += 1
 
             col += 1
-
-    starcount = 0
-    while 0 < len(star_coords):
-        # eliminate star points out of seen chords in clusters
-        # using < v > directional search
-
-        # print(star_coords)
-        i = 0
-        curr_star = [star_coords[i]]
-        while i < len(curr_star):
-            lstar = (curr_star[i][0], curr_star[i][1] - 1)
-            rstar = (curr_star[i][0], curr_star[i][1] + 1)
-            dstar = (curr_star[i][0] + 1, curr_star[i][1])
-
-            if lstar not in curr_star and lstar in star_coords:
-                curr_star.append(lstar)
-            if rstar not in curr_star and rstar in star_coords:
-                curr_star.append(rstar)
-            if dstar not in curr_star and dstar in star_coords:
-                curr_star.append(dstar)
-
-            # print(curr_star)
-
-            i += 1
-
-        star_coords = [s for s in star_coords if s not in curr_star]
-
-        starcount += 1
 
     print(starcount)
 
