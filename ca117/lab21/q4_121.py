@@ -11,7 +11,7 @@ import sys
 
 def rcamel(s):
     cap_ind = []
-    sentence = ""
+    sentence = []
 
     # gather indices for capital letters
     for i in range(len(s)):
@@ -24,17 +24,17 @@ def rcamel(s):
 
         # first case doesn't decapitalize
         if i == 0:
-            sentence += s[start:end] + " "
+            sentence.append(s[start:end])
         else:
-            sentence += s[start:end].lower() + " "
+            sentence.append(s[start:end].lower())
 
         i += 1
     if 1 < len(cap_ind):
-        sentence += s[cap_ind[i]:].lower()  # get last case
+        sentence.append(s[cap_ind[i]:].lower())  # get last case
     else:
-        sentence += s[cap_ind[i]:]
+        sentence.append(s[cap_ind[i]:])
 
-    return sentence
+    return " ".join(sentence)
 
 def main():
     for line in sys.stdin:
