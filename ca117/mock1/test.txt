@@ -1,0 +1,14 @@
+squirrel
+dog
+pig
+lion
+mouse
+monkey
+elephant
+fox
+panda
+kangaroo
+cow
+leopard
+coyote
+hedgehog

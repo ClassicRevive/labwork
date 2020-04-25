@@ -12,8 +12,8 @@ def main():
         sentence = []
         line = line.rstrip().split()
         for word in line:
-            if word.lower().strip("!,") not in seen:
-                seen.add(word.lower().strip("!,"))
+            if word.lower().strip(punctuation) not in seen:
+                seen.add(word.lower().strip(punctuation))
                 sentence.append(word)
             else:
                 sentence.append(".")
