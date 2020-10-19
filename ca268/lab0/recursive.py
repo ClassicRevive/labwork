@@ -6,11 +6,5 @@ def is_palindrome(a):
     if len(a) <= 1:
         return True
 
-    x1 = a[0]
-    x2 = a[-1]
-
-    if x1 != x2:
-        return False
-    
     # recursive case
-    return is_palindrome(a[1:-1])
+    return a[0] == a[-1] and is_palindrome(a[1:-1])
