@@ -12,3 +12,4 @@ def unique_list(lst):
     uq_list = list(set(lst))
 
     return uq_list
+
