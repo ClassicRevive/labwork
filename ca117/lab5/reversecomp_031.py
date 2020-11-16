@@ -3,6 +3,7 @@
 ''' produce list of words whose reverse is in the list '''
 
 import sys
+import pandas as pd
 
 def reverse(s):
     reverse = ""
