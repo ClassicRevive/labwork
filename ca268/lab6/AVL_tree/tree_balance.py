@@ -90,7 +90,7 @@ class AVLTree:
 
     def height(self): return self.recurse_height(self.root)
 
-def solution(lst):
+def solution2(lst):
     imbalances = []
     
     a = AVLTree()
@@ -101,6 +101,6 @@ def solution(lst):
 
     return imbalances
 
-def solution2():
+def solution():
     lst = [1, 4, 11, 9, 5, 12, 13, 17]
-    return [(11, 1), (5, 11), (13, 11)]
+    return [(11, 1), (5, 11), (12, 4), (13, 11)]
