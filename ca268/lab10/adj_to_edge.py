@@ -48,7 +48,6 @@ def make_adjacency_matrix2(edge_list):
     ''' this is a second version of the above function '''
 
     adjacency_matrix = []
-
     num_nodes = len(edge_list)
 
     for i in range(num_nodes):
@@ -62,3 +61,4 @@ def make_adjacency_matrix2(edge_list):
                     adjacency_matrix[row][col] = 1
 
     return adjacency_matrix
+
