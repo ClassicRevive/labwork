@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/conrtol_flow/conrtol_flow.iml" filepath="$PROJECT_DIR$/conrtol_flow/conrtol_flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/for_loop/for_loop.iml" filepath="$PROJECT_DIR$/for_loop/for_loop.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab2.iml" filepath="$PROJECT_DIR$/lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/while_loop/while_loop.iml" filepath="$PROJECT_DIR$/while_loop/while_loop.iml" />
     </modules>
   </component>
 </project>

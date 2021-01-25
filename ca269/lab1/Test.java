@@ -8,6 +8,6 @@ public class Test
         System.out.println(4 + 5);
         System.out.println("4" + "005");
         System.out.println("4" + 005);
-        // System.out.print("4" * 5);  Not legal!
+        System.out.print("4" * 5);
     }
 }
