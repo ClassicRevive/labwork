@@ -95,11 +95,38 @@ class Graph(object):
                 visited.append(v)
             for vertex in graph[v]:
                 if not vertex in visited:
-                    # print("New:", v, vertex, visited, stack)
                     stack.append(vertex)
+                    break
+
+
+    def rec_dfs(self, v, visited):
+        if v in visited:
+            return
+
+        visited.append(v)
+        graph = self.__graph_dict
+
+        for vertex in graph[v]:
+            print("dfs", visited)
+            if not vertex in visited:
+                self.rec_dfs(vertex, visited)
+
+
+    @staticmethod
+    def dijkstra(graph, start):
+        # distance between start node and each node on the graph
+        graph = graph.__graph_dict
+        inf = 999999
+        dists = []
+        for node in graph:
+            for edge in node:
+                dists.append(inf)
+
+        print(dists)
+        
 
 if __name__ == "__main__":
-
+    # test script for graph
     g = { "a" : ["b", "c", "f", ],
           "b" : ["a", "c", "d", ],
           "c" : ["a", "b", "d", "f"],
@@ -113,8 +140,16 @@ if __name__ == "__main__":
     visited = []
 
     graph.bfs("a", visited)
+    print("bfs:")
+    print(visited)
+    visited = []
+    
+    graph.rec_dfs("a", visited)
+    print("recursive dfs:")
     print(visited)
     visited = []
     graph.dfs("a", visited)
+    print("stack dfs:")
     print(visited)
+
 

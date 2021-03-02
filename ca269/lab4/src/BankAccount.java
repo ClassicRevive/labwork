@@ -1,5 +1,5 @@
 public class BankAccount {
-    double balance;
+    private double balance;
 
     public BankAccount(double b)
     {
