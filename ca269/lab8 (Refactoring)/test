@@ -1,0 +1,42 @@
+OUTPUT
+<h1>Statement for Donald</h1>
+<ol>
+  <li>James Bond does Java  18.0</li>
+  <li>Mickey Mouse  24.0</li>
+  <li>The Pointer Sisters  4.0</li>
+  <li>The Dointer Sisters  6.0</li>
+</ol>
+<p>Amount owed is 52.0</p>
+<p>You earned 5 frequent renter points</p>
+
+<h1>Statement for Bernie</h1>
+<ol>
+  <li>James Bond does Java  18.0</li>
+  <li>Mickey Mouse  24.0</li>
+  <li>The Pointer Sisters  4.0</li>
+  <li>The Dointer Sisters  6.0</li>
+</ol>
+<p>Amount owed is 104.0</p>
+<p>You earned 10 frequent renter points</p>
+
+
+EXPECTED
+<h1>Statement for Donald</h1>
+<ol>
+  <li>James Bond does Java  18.0</li>
+  <li>Mickey Mouse  24.0</li>
+  <li>The Pointer Sisters  4.0</li>
+  <li>The Dointer Sisters  6.0</li>
+</ol>
+<p>Amount owed is 52.0</p>
+<p>You earned 5 frequent renter points.</p>
+
+<h1>Statement for Bernie</h1>
+<ol>
+  <li>James Bond does Java  18.0</li>
+  <li>Mickey Mouse  24.0</li>
+  <li>The Pointer Sisters  4.0</li>
+  <li>The Dointer Sisters  6.0</li>
+</ol>
+<p>Amount owed is 104.0</p>
+<p>You earned 10 frequent renter points.</p>

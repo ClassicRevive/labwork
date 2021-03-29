@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Command Line/Command Line.iml" filepath="$PROJECT_DIR$/Command Line/Command Line.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lab4.iml" filepath="$PROJECT_DIR$/lab4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab4_Array_Class_CmdLine.iml" filepath="$PROJECT_DIR$/lab4_Array_Class_CmdLine.iml" />
     </modules>
   </component>
 </project>
