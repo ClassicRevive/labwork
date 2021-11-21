@@ -1,0 +1,6 @@
+public class Porsche extends Vehicle{
+
+    public void go() {
+        System.out.println("vrrrmm");
+    }
+}
